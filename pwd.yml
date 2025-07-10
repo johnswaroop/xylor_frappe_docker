@@ -111,7 +111,10 @@ services:
       restart_policy:
         condition: on-failure
     command:
-      - nginx-entrypoint.sh
+      - bench
+      - serve
+      - --port
+      - "80"
     environment:
       BACKEND: backend:8000
       FRAPPE_SITE_NAME_HEADER: frontend
